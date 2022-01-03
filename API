@@ -1,0 +1,14 @@
+import requests
+import json
+import time
+
+while True:
+    requisicao = requests.get('https://api.bitpreco.com/btc-brl/ticker')
+    cotacao = json.loads(requisicao.text)
+    print('$$$$$$$COTAÇÃO$$$$$$$')
+    print('Par:', cotacao['market'])
+    print('Ultimo valor::', cotacao['last'])
+    print('Volume:', cotacao['avg'])
+    print('Data e hora:', cotacao['timestamp'])
+    print('$$$$$$$$$$$$$$$$$$$$$')
+    time.sleep(10)
